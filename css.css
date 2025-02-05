@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Red Hat Display", sans-serif;
+}
+
+main{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #d3c8ed;
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: #363636;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.btns-wrapp{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btnOption{
+    padding: 14px 20px;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    line-height: 22px;
+    width: 120px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btnAccept{
+    background-color: #7535e5;
+}
+
+.btnCancel{
+    background-color: #7535e5;
+}
+.btnOption:hover{
+    background-color: #1838c3;
+}
+
+
+
