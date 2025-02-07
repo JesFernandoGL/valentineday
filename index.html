@@ -9,18 +9,24 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>    
 </head>
 <body>
     <main>
-        <h1 class="title animate__animated animate__bounceIn animate__slow">¿Quieres ser mi valentine?</h1>
-        <img src="images/16-peach-cat-mochi-goma.gif" alt="">
+        <div class="titles-wrapp">
+            <p class="title title0 animate__animated animate__bounceIn animate__slow">¿Quieres ser mi san valentine?</p>
+            <p class="title title1 animate__animated">¿Estás segura?</p>
+            <p class="title title2 animate__animated">¿Puedes pensarlo bien?</p>
+            <p class="title title3 animate__animated">Es la última pregunta, ya no hay vuelta atrás</p>
+            <p class="title title4 animate__animated">Feliz San Valentín</p>
+        </div>
+        <img id="gifMain" src="images/16-peach-cat-mochi-goma.gif" alt="">
         <div class="btns-wrapp">
-            <button id="btnSi" class="btnOption btnAccept">No</button>
-            <button id="btnNo" class="btnOption btnCancel">Si</button>
+            <button id="btnNo" data-count="0" class="btnOption btnAccept">No</button>
+            <button id="btnSi" data-count="0" class="btnOption btnCancel">Si</button>
         </div>        
     </main>
-    <div class="overlay animate__animated"></div>
-    
+    <div class="overlay animate__animated"></div>    
     <script src="js.js"></script>
 </body>
 </html>
