@@ -6,6 +6,7 @@
 
 body{
     font-family: "Red Hat Display", sans-serif;
+    overflow: hidden;
 }
 
 main{
@@ -17,22 +18,36 @@ main{
     align-items: center;
     justify-content: center;
     background-color: #d3c8ed;
+    padding: 20px;
 }
 
 .overlay{
     width: 100%;
     height: 100vh;
-    background-color: #363636;
+    background-color: #af1919;
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.titles-wrapp{
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
 }
 
 .title{
     font-weight: 800;
     font-size: 40px;
     line-height: 48px;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
+
 
 .btns-wrapp{
     display: flex;
@@ -60,6 +75,14 @@ main{
 }
 .btnOption:hover{
     background-color: #1838c3;
+}
+
+
+/*Confetti*/
+#btnParticles{
+    position: fixed;
+    top: 50%;
+    left: 50%;
 }
 
 
