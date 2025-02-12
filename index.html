@@ -13,18 +13,47 @@
 </head>
 <body>
     <main>
-        <div class="titles-wrapp">
-            <p class="title title0 animate__animated animate__bounceIn animate__slow">¿Quieres ser mi san valentine?</p>
-            <p class="title title1 animate__animated">¿Estás segura?</p>
-            <p class="title title2 animate__animated">¿Puedes pensarlo bien?</p>
-            <p class="title title3 animate__animated">Es la última pregunta, ya no hay vuelta atrás</p>
-            <p class="title title4 animate__animated">Feliz San Valentín</p>
+        <div id="phase1" class="phases phase-active">
+            <div class="titles-wrapp">
+                <p class="title title0 animate__animated animate__bounceIn animate__slow">¿Quieres ser mi San Valentín?</p>
+                <p class="title title1 animate__animated">¿Estás segura?</p>
+                <p class="title title2 animate__animated">¿Puedes pensarlo bien?</p>
+                <p class="title title3 animate__animated">Es la última pregunta, ya no hay vuelta atrás</p>
+                <p class="title title4 animate__animated">Feliz San Valentín</p>
+            </div>
+            <img id="gifMain" src="images/16-peach-cat-mochi-goma.gif" alt="">
+            <div class="btns-wrapp">
+                <button id="btnNo" data-count="0" class="btnOption btnAccept">No</button>
+                <button id="btnSi" data-count="0" class="btnOption btnCancel">Si</button>
+            </div>        
         </div>
-        <img id="gifMain" src="images/16-peach-cat-mochi-goma.gif" alt="">
-        <div class="btns-wrapp">
-            <button id="btnNo" data-count="0" class="btnOption btnAccept">No</button>
-            <button id="btnSi" data-count="0" class="btnOption btnCancel">Si</button>
-        </div>        
+        <div id="phase2" class="phases">
+            <div class="carta-wrapp">
+                <div class="flap"></div>
+                <div class="paper">
+                    <p>Este es el contenido de la carta</p>
+                    <p>Este es el contenido de la carta</p>
+                    <p>Este es el contenido de la carta</p>
+                    <p>Este es el contenido de la carta</p>
+                </div>
+                <div id="carta" class="carta"></div>
+                <div class="overflowBottom"></div>
+            </div>
+            <div class="codigocarta-wrapp animate__animated">
+                <input class="codigocarta-num animate__animated" type="number" name="num1" id="num1" min="0" max="9" placeholder="0" data-correct="7">
+                <input class="codigocarta-num animate__animated" type="number" name="num2" id="num2" min="0" max="9" placeholder="0" data-correct="5">
+                <input class="codigocarta-num animate__animated" type="number" name="num3" id="num3" min="0" max="9" placeholder="0" data-correct="1">
+                <input class="codigocarta-num animate__animated" type="number" name="num4" id="num4" min="0" max="9" placeholder="0" data-correct="1">
+            </div>
+        </div>
+        <div id="phase3" class="phases">
+            <div class="carta-contenido">
+                <p>Esta es la carta</p>
+                <p>Esta es la carta</p>
+                <p>Esta es la carta</p>
+                <p>Esta es la carta</p>
+            </div>
+        </div>
     </main>
     <div class="overlay animate__animated"></div>    
     <script src="js.js"></script>

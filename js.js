@@ -21,7 +21,6 @@ const imagesSi = ['3-peach-&-goma-animations', '7-mochi-cat-peach-goma', '10-moc
 function main(){
     eventsBtn();
     
-
 }
 
 
@@ -86,7 +85,10 @@ function eventsBtn(){
 
 function activateCelebration(){
     $('.title4 ').addClass('animate__fadeInDown title-Active');
-    explosionConfetti();    
+    explosionConfetti();
+    setTimeout(() => {
+        changePhases('#phase1', '#phase2');
+    }, 4000);    
 }
 
 function explosionConfetti() {
@@ -139,6 +141,89 @@ function explosionConfetti() {
 
     launchExplosion();
 }
+
+
+function changePhases(phaseOut, phaseIn){
+    $(phaseOut).fadeOut();
+    $(phaseIn).addClass('phase-active');        
+}
+
+$('.codigocarta-num').on('input', validationCodeLetter);
+
+function validationCodeLetter(){
+    const num1 = $('#num1').val();
+    const num2 = $('#num2').val();
+    const num3 = $('#num3').val();
+    const num4 = $('#num4').val();
+
+    const val = $(this).val();
+    const correctNum = $(this).attr('data-correct');
+    if( val === correctNum ){
+        $(this).addClass('correctNum');
+        $(this).removeClass('animate__headShake');
+        $(this).addClass('animate__bounce');
+    }else{
+        $(this).removeClass('correctNum');
+        $(this).removeClass('animate__bounce');        
+        $(this).addClass('animate__headShake');
+        $(this).val('');
+        $(this).attr('placeholder', val)
+    }
+
+    if(num1 === '7' && num2 === '5' && num3 === '1' && num4 === '1'){
+        setTimeout(() => {
+            $('.codigocarta-wrapp').addClass('animate__fadeOutDown');
+            $('.codigocarta-wrapp').fadeOut();
+            activeLetter();
+        }, 2000);
+    }
+
+    setTimeout(() => {
+        $(this).removeClass('animate__bounce');
+        $(this).removeClass('animate__headShake');                  
+    }, 800);
+
+}
+
+function activeLetter() {
+    setTimeout(() => {
+        $('.flap').addClass('flapAnimation');
+        $('.paper').addClass('paperAnimation');
+    }, 2000);
+
+    setTimeout(() => {
+        $('.overflowBottom').hide();
+        $('.flap').addClass('animate__animated animate__fadeOutDown');
+        $('.carta').addClass('animate__animated animate__fadeOutDown');        
+    }, 4000);
+
+    setTimeout(() => {
+        $('.paper').addClass('paperAnimationScale');         
+    }, 5000);
+
+    setTimeout(() => {      
+        changePhases('#phase2', '#phase3');
+        setInterval(createHeart, 4000);     
+    }, 6000);
+}
+
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.classList.add('heart');
+    $('#phase3').append(heart);
+    
+    const leftPosition = Math.random() * window.innerWidth;
+    heart.style.left = `${leftPosition}px`;
+    heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 14000);
+}
+
+
 
 
 

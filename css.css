@@ -9,6 +9,12 @@ body{
     overflow: hidden;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 main{
     text-align: center;
     width: 100%;
@@ -19,6 +25,27 @@ main{
     justify-content: center;
     background-color: #d3c8ed;
     padding: 20px;
+}
+
+.phases{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.phases.phase-active{
+    opacity: 1;
+    visibility: visible;    
 }
 
 .overlay{
@@ -84,6 +111,144 @@ main{
     top: 50%;
     left: 50%;
 }
+
+/*Phase 2*/
+#phase2{
+    background-color: #fad7df;
+}
+
+.carta-wrapp{
+    position: relative;
+}
+
+.carta {
+    border-left: 120px solid #ff989e;
+    border-right: 120px solid #ff989e;
+    border-top: 80px solid transparent;
+    border-bottom: 80px solid #ff858a;
+    position: relative;
+}
+
+.flap{
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-top: 80px solid #f33334;
+    border-bottom: 80px solid transparent;;
+    position: absolute;    
+    transform-origin: top;
+    transform: rotateX(0); 
+    z-index: 1;
+    transition: all 1s ease;
+}
+
+.paper{
+    background: #fff;
+    position: absolute;
+    width: calc(100% - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    padding: 20px;
+    transform: translate(-50%, 0);
+    transition: all 1s ease 1s;    
+}
+
+.overflowBottom{
+    position: absolute;
+    top: 100%;
+    height: 200px;
+    width: 100%;
+    background-color: #fad7df;
+}
+
+.paperAnimation{
+    transform: translate(-50%, -100px);
+}
+
+.paperAnimationScale{
+    transform: translate(-50%, -100px) scale(3);
+    transition: all 2s ease;    
+}
+
+.flapAnimation{
+    transform: rotateX(180deg); z-index: 0;
+}
+
+.codigocarta-wrapp{
+    margin-top: 20px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.codigocarta-num{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ef5555;
+    background-color: #f9a3a8;
+    border-radius: 4px;
+    color: #af0505;
+    padding: 8px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+}
+
+.codigocarta-num::placeholder{
+    color: #ef5555;
+}
+
+.correctNum{
+    border: 2px solid #85c356;
+    background-color: #b5d37b;
+    color: #488f07;
+}
+
+/*Fin Phase 2*/
+
+/*Phase 3*/
+#phase3{
+    background-color: #f8f8f8;
+}
+
+.carta-contenido{
+    font-size: 18px;
+    line-height: 24px;
+    color: #04010e;
+}
+
+.carta-contenido p{
+    margin-bottom: 10px;
+}
+
+.heart {
+    position: absolute;
+    top: 0;
+    color: red;
+    font-size: 24px;
+    opacity: 70%;
+    animation: float 14s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 70%;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+
+
+/*Fin Phase 3*/
 
 
 
