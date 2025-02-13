@@ -24,7 +24,6 @@ main{
     justify-content: center;
     background-color: #d3c8ed;
     padding: 20px;
-    overflow-x: hidden;
 }
 
 .phases{
@@ -39,7 +38,7 @@ main{
     left: 0;
     opacity: 0;
     visibility: hidden;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: all 1s ease;
 }
 
@@ -222,13 +221,13 @@ main{
     font-size: 16px;
     line-height: 22px;
     color: #04010e;
-    padding: 40px;
+    padding: 40px 32px;
     width: 100%;
     text-align: start;    
 }
 
 .carta-contenido p{
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 .heart {
@@ -238,6 +237,7 @@ main{
     font-size: 24px;
     opacity: 50%;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: opacity 0.1s ease-out, scale 0.1s;
     animation: float 20s linear infinite;
 }
