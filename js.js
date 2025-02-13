@@ -19,7 +19,7 @@ const imagesNo = ['9-peach-&-goma', '13-mochi-cat-peach-goma', '11-peach-&-goma-
 const imagesSi = ['3-peach-&-goma-animations', '7-mochi-cat-peach-goma', '10-mochi-cat-peach-goma', '17-mochi-cat-peach-goma'];
 
 function main(){
-    eventsBtn();    
+    eventsBtn();   
     
 }
 
@@ -232,6 +232,7 @@ function createHeart() {
 function activateFloatHeats(){
     createHeart();
     setInterval(createHeart, 8000);
+    document.querySelector('audio').play();
 }
 
 function createHeartScreen(x, y) {

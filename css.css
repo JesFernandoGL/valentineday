@@ -21,8 +21,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #d3c8ed;
+    justify-content: center;    
     padding: 20px;
 }
 
@@ -50,10 +49,14 @@ main{
 .overlay{
     width: 100%;
     height: 100vh;
-    background-color: #af1919;
+    background-image: linear-gradient(45deg, #fedfc3, #fcab96, #e580a1, #ef6b91);
     position: fixed;
     top: 0;
     left: 0;
+}
+
+#phase1{
+    background-image: linear-gradient(45deg, #e9e7dd, #e7aab7);
 }
 
 .titles-wrapp{
@@ -73,6 +76,7 @@ main{
     left: 0;
     width: 100%;
     padding: 0 20px;
+    color: #830839;
 }
 
 
@@ -87,21 +91,19 @@ main{
     border-radius: 4px;
     color: #fff;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
     width: 120px;
     font-weight: 600;
     cursor: pointer;
-}
-.btnAccept{
-    background-color: #7535e5;
+    border: 2px solid #c62744;
+    background-color: #db8192;
+    box-shadow: 0 4px 6px 0px #79113a52;
 }
 
-.btnCancel{
-    background-color: #7535e5;
-}
 .btnOption:hover{
-    background-color: #1838c3;
+    background-color: #c62744;
+    border: 2px solid #79113a;
 }
 
 
@@ -114,7 +116,7 @@ main{
 
 /*Phase 2*/
 #phase2{
-    background-color: #fad7df;
+    background-color: #e9e7dd;
 }
 
 .carta-wrapp{
@@ -122,17 +124,19 @@ main{
 }
 
 .carta {
-    border-left: 120px solid #ff989e;
-    border-right: 120px solid #ff989e;
+    border-left: 120px solid #f9ced7;
+    border-right: 120px solid #f9ced7;
     border-top: 80px solid transparent;
-    border-bottom: 80px solid #ff858a;
+    border-bottom: 80px solid #f5a4b3;
     position: relative;
+    box-shadow: 0 4px 6px 0px #79113a52;
+    z-index: 5;
 }
 
 .flap{
     border-left: 120px solid transparent;
     border-right: 120px solid transparent;
-    border-top: 80px solid #f33334;
+    border-top: 80px solid #c62744;
     border-bottom: 80px solid transparent;;
     position: absolute;    
     transform-origin: top;
@@ -142,13 +146,14 @@ main{
 }
 
 .paper{
-    background: #fff;
+    background: #e9e7dd;
     position: absolute;
     width: calc(100% - 20px);
     left: 50%;
     transform: translateX(-50%);
     border-radius: 4px;
     padding: 20px;
+    box-shadow: 0 4px 6px 0px #79113a52;
     transform: translate(-50%, 0);
     transition: all 1s ease 1s;    
 }
@@ -158,7 +163,7 @@ main{
     top: 100%;
     height: 200px;
     width: 100%;
-    background-color: #fad7df;
+    background-color: #e9e7dd;
 }
 
 .paperAnimation{
@@ -187,10 +192,11 @@ main{
 .codigocarta-num{
     width: 60px;
     height: 60px;
-    border: 2px solid #ef5555;
-    background-color: #f9a3a8;
+    border: 2px solid #c62744;
+    background-color: #f5a4b3;
+    box-shadow: 0 4px 6px 0px #79113a52;
     border-radius: 4px;
-    color: #af0505;
+    color: #fff;
     padding: 8px;
     text-align: center;
     font-size: 30px;
@@ -199,7 +205,7 @@ main{
 }
 
 .codigocarta-num::placeholder{
-    color: #ef5555;
+    color: #c62744;
 }
 
 .correctNum{
@@ -212,7 +218,7 @@ main{
 
 /*Phase 3*/
 #phase3{
-    background-color: #f8f8f8;
+    background-image: linear-gradient(45deg, #e9e7dd, #fbc0cc);
     justify-content: flex-start;
     align-items: flex-start;
 }
@@ -220,11 +226,13 @@ main{
 .carta-contenido{
     font-size: 16px;
     line-height: 22px;
-    color: #04010e;
-    padding: 40px 32px;
+    color: #340216;
+    padding: 20px 20px;
     width: 100%;
     text-align: start; 
-    overflow-y: auto;   
+    overflow-y: auto;
+    max-width: 800px;
+    margin: 0 auto;   
 }
 
 .carta-contenido p{
@@ -236,7 +244,7 @@ main{
     top: 0;
     color: red;
     font-size: 24px;
-    opacity: 50%;
+    opacity: 30%;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: opacity 0.1s ease-out, scale 0.1s;
@@ -246,7 +254,7 @@ main{
 @keyframes float {
     0% {
         top: 100%;
-        opacity: 50%;
+        opacity: 30%;
     }
     100% {
         top: -100px;
@@ -279,6 +287,34 @@ main{
     }
 }
 
+
+.img-text{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 12px;   
+    background: #79113a;
+    color: #e9e7dd;
+    border-radius: 4px; 
+}
+
+@media (max-width: 480px) {
+    .img-text{
+        flex-direction: column;
+    }
+}
+
+.img-text img{
+    width: 100%;
+    max-width: 320px;
+    max-height: 240px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.img-text p:last-of-type{
+    margin-bottom: 0;
+}
 
 
 
