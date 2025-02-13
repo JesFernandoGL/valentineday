@@ -6,7 +6,7 @@
 
 body{
     font-family: "Red Hat Display", sans-serif;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -29,7 +29,7 @@ main{
 
 .phases{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,14 +65,15 @@ main{
 
 .title{
     font-weight: 800;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 36px;
+    line-height: 44px;
     text-align: center;
     opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 0 20px;
 }
 
 
@@ -213,12 +214,17 @@ main{
 /*Phase 3*/
 #phase3{
     background-color: #f8f8f8;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .carta-contenido{
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
     color: #04010e;
+    padding: 40px;
+    width: 100%;
+    text-align: start;    
 }
 
 .carta-contenido p{
@@ -230,18 +236,44 @@ main{
     top: 0;
     color: red;
     font-size: 24px;
-    opacity: 70%;
-    animation: float 14s linear infinite;
+    opacity: 50%;
+    transition: opacity 0.1s ease-out, scale 0.1s;
+    animation: float 20s linear infinite;
 }
 
 @keyframes float {
     0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 70%;
+        top: 100%;
+        opacity: 50%;
     }
     100% {
-        transform: translateY(-10vh) scale(1.5);
+        top: -100px;
         opacity: 0;
+    }
+}
+
+.heartScreen{
+    position: absolute;
+    font-size: 250px;
+    line-height: 180px;
+    opacity: 70%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, scale 0.3s;
+    animation: floatScreen 2s infinite alternate ease-in-out;    
+}
+
+.explode {
+    scale: 1.2;
+    opacity: 0;
+}
+
+@keyframes floatScreen {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
     }
 }
 

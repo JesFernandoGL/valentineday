@@ -19,7 +19,7 @@ const imagesNo = ['9-peach-&-goma', '13-mochi-cat-peach-goma', '11-peach-&-goma-
 const imagesSi = ['3-peach-&-goma-animations', '7-mochi-cat-peach-goma', '10-mochi-cat-peach-goma', '17-mochi-cat-peach-goma'];
 
 function main(){
-    eventsBtn();
+    eventsBtn();    
     
 }
 
@@ -203,7 +203,7 @@ function activeLetter() {
 
     setTimeout(() => {      
         changePhases('#phase2', '#phase3');
-        setInterval(createHeart, 4000);     
+        generateHearts(15);             
     }, 6000);
 }
 
@@ -214,14 +214,56 @@ function createHeart() {
     heart.classList.add('heart');
     $('#phase3').append(heart);
     
-    const leftPosition = Math.random() * window.innerWidth;
+    const leftPosition = Math.random() * (window.innerWidth - 40);
     heart.style.left = `${leftPosition}px`;
     heart.style.fontSize = `${Math.random() * 20 + 20}px`;
     
+    heart.addEventListener("click", function() {
+        heart.classList.add("explode");
+        
+        setTimeout(() => heart.remove(), 100);
+    });
+    
     setTimeout(() => {
         heart.remove();
-    }, 14000);
+    }, 20000);
 }
+
+function activateFloatHeats(){
+    createHeart();
+    setInterval(createHeart, 8000);
+}
+
+function createHeartScreen(x, y) {
+    let heart = document.createElement("div");
+    heart.innerHTML = '❤️';
+    heart.classList.add("heartScreen");
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heart.style.animationDelay = `${Math.floor(Math.random() * 3)}s`;
+    $('#phase3').append(heart);
+    
+    heart.addEventListener("click", function() {
+        heart.classList.add("explode");
+        
+        setTimeout(() => heart.remove(), 300);
+        setTimeout(() => {
+            if( $('.heartScreen').length === 0 ){
+                activateFloatHeats();
+            }
+        }, 500);
+    });
+}
+
+function generateHearts(count) {
+    for (let i = 0; i < count; i++) {
+        let x = Math.random() * (window.innerWidth - 180);
+        let y = Math.random() * (window.innerHeight - 180);
+        createHeartScreen(x, y);
+    }
+}
+
+
 
 
 
