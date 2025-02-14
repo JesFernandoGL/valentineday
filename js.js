@@ -1,16 +1,15 @@
 window.addEventListener('load', function(){
-    const over = $('.overlay');    
-
-    over.addClass('animate__fadeOut');
+    const over = $('.overlay'); 
     
 
     setTimeout(() => {
+        over.addClass('animate__fadeOut');
         main();              
     }, 1000);
 
     setTimeout(() => {
         over.hide();            
-    }, 1500);
+    }, 2000);
 
      
 });
@@ -19,8 +18,8 @@ const imagesNo = ['9-peach-&-goma', '13-mochi-cat-peach-goma', '11-peach-&-goma-
 const imagesSi = ['3-peach-&-goma-animations', '7-mochi-cat-peach-goma', '10-mochi-cat-peach-goma', '17-mochi-cat-peach-goma'];
 
 function main(){
-    eventsBtn();   
-    
+    eventsBtn();
+        
 }
 
 
@@ -170,7 +169,7 @@ function validationCodeLetter(){
         $(this).attr('placeholder', val)
     }
 
-    if(num1 === '7' && num2 === '5' && num3 === '1' && num4 === '1'){
+    if(num1 === '1' && num2 === '4' && num3 === '7' && num4 === '5'){
         setTimeout(() => {
             $('.codigocarta-wrapp').addClass('animate__fadeOutDown');
             $('.codigocarta-wrapp').fadeOut();
