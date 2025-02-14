@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -90,7 +92,6 @@ main{
     padding: 14px 20px;
     border-radius: 4px;
     color: #fff;
-    border: none;
     font-size: 18px;
     line-height: 22px;
     width: 120px;
@@ -227,7 +228,7 @@ main{
     font-size: 16px;
     line-height: 22px;
     color: #340216;
-    padding: 20px 20px;
+    padding: 40px 20px;
     width: 100%;
     text-align: start; 
     overflow-y: auto;
@@ -292,10 +293,11 @@ main{
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
-    padding: 12px;   
-    background: #79113a;
-    color: #e9e7dd;
-    border-radius: 4px; 
+    padding: 12px;
+    background: #eae6dd;
+    box-shadow: 0 4px 6px 0px #79113a52;
+    border-radius: 4px;
+    position: relative;
 }
 
 @media (max-width: 480px) {
@@ -304,7 +306,7 @@ main{
     }
 }
 
-.img-text img{
+.imgCartaFoto{
     width: 100%;
     max-width: 320px;
     max-height: 240px;
@@ -312,10 +314,34 @@ main{
     margin: 0 auto;
 }
 
+.imgCartaFoto.imgtop{
+    object-position: top;
+}
+.imgCartaFoto.imgbottom{
+    object-position: bottom;
+}
+
 .img-text p:last-of-type{
     margin-bottom: 0;
 }
 
+.cartaFinalText{
+    font-family: "Ms Madi", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 56px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.imgCartaCorazon{
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    right: 8px;
+    transform: rotate(21deg);
+}
 
 
 /*Fin Phase 3*/
